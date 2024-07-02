@@ -1,0 +1,591 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* sidebar design */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+ .navbar.fixed-top {
+     position: fixed;
+     width: 100%;
+     top: 0;
+     z-index: 1000;
+     background-color: #ffffff;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
+
+ .extra_margin {
+     margin-top: 8rem;
+ }
+ .extra_margin2{
+    margin-top: 6.2rem;
+ }
+
+.mylogo{
+    height: 4rem;
+    width: 4rem;
+}
+.mylogo img{
+    height: 4rem;
+    width: 4rem;
+}
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+}
+.d-flex{
+    display: flex;
+}
+.main{
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+#sidebar{
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #0e223e;
+}
+/* .sidebar-nav{
+    margin-left: 1rem;
+} */
+#sidebar.expand{
+    width: 260px;
+    min-width: 260px;
+}
+#toggle-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+#toggle-btn i{
+    font-size: 1.5rem;
+    color: white;
+}
+.sidebar-logo{
+    margin: auto 0;
+}
+.sidebar-logo a{
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span{
+    display: none;
+}
+
+.sidebar-nav{
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+a.sidebar-link{
+    padding: .625rem 1.625rem;
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i{
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover{
+    background-color: rgba(255,255,255,.075);
+    border-left: 3px solid #3b7ddd;
+}
+.sidebar-item{
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown{
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown{
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after{
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after{
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+/* sidebar close */
+
+
+
+
+
+
+
+.content_login_home{
+    width: 100%;
+}
+.myform{
+    width: 30%;
+    margin-top: 4rem;
+    border: 2px solid rgb(109, 109, 109);
+    background-color: rgb(236, 236, 166);
+    border-radius: 20px;
+    padding: 2rem 4rem;
+    box-shadow: 10px , 10px;
+}
+.log-heading{
+    padding-bottom: .5rem;
+    border-bottom: 2px solid rgb(124, 122, 122);
+}
+.myform input{
+    margin-top: 1rem;
+    text-align: center;
+}
+.signup-btn{
+    float: right;
+}
+.login-signup-container{
+    position: relative;
+}
+#signup-box{
+    position: absolute;
+    top: -4rem;
+    left: 35%;
+    display: none; 
+}
+.verify-btn{
+    margin: 1rem 40%;
+}
+
+.app-heading{
+    width: 8rem;
+    color: white;
+}
+.btn-div{
+    width: 100%;
+    display:flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+}
+.btn-div button a{
+    text-decoration: none;
+}
+
+
+/* .main{
+    min-height: 100vh;
+    transition: filter 0ms ease-in-out 300ms;
+}
+.content{
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.content h2{
+    font-size: 40px;
+}
+.content img{
+    width: 400px;
+}
+.contnt > *{
+    margin: 10px 0px;
+}
+.popup{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-top: -25px;
+    transition: top 0ms ease-in-out 300ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+}
+.popup > * {
+    margin: 15px 0px;
+}
+.popup .close-btn{
+    position: absolute;
+    top: -3px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #eee;
+    color: #111;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.active-popup{
+    overflow: hidden;
+}
+.main1{
+    filter: blur(5px);
+    background: rgba(0, 0, 0, 0.8);
+    transition: filter 0ms ease-in-out 0ms;
+}
+body.active-popup .popup{
+    top: 50%;
+    opacity: 1;
+    margin-top: 0px;
+    transition: top 0ms ease-in-out 0ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+} */
+
+
+/* .signuplogin_design a{
+    text-decoration: none;
+} */
+#first_letter{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    border: none;background-color: blue;
+}
+
+
+
+
+#login_msg{
+    display: none;
+}
+#input_otp_box{
+    display: none;
+}
+#verifyOTPbtn{
+    display: none;
+}
+
+#signup_msg{
+    display: none;
+}
+#signup_otp_box{
+    display: none;
+}
+#verifysignupOTPbtn{
+    display: none;
+}
+
+
+/* Home page design */
+
+.category{
+    padding: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+    /* gap: 5rem; */
+}
+.category img{
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid rgb(182, 178, 178);
+    border-radius: 15px;
+    /* padding: 1rem 1rem; */
+}
+.category img:hover{
+    box-shadow: 5px 10px 30px rgba(82, 81, 81, 0.445);
+    cursor: pointer;
+}
+.img-d{
+    height: 25rem;
+}
+.extra-img{
+    width: 100vw;
+}
+
+
+
+#allCompanyyy{
+    width: vw;
+}
+#total_service {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    /* Four columns with equal width */
+    grid-row-gap: 3rem;
+    /* Adjust the gap between grid items */
+}
+
+.car-rental{
+    height: 5rem;
+    max-width: 7rem;
+}
+
+.car-rental-box {
+    border: 1px solid #ccc;
+    width: vw;
+    height: auto;
+    display:flex;
+    margin: 2rem;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.car-rental-box .img-div {
+    flex: 40%;
+    height: 10rem;
+    /* min-height: 12rem;
+    min-width: 12rem; */
+    text-align: center;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.car-rental-box .img-div img {
+    height: 10rem;
+    width: 100%;
+}
+
+.car-rental-box .details-div {
+    flex: 60%;
+    padding: 10px 0;
+}
+
+.car-rental-box .details-div h5 {
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Example of using em for font size */
+}
+
+.car-rental-box .details-div p {
+    margin-bottom: 10px;
+    font-size: 1em; /* Example of using em for font size */
+}
+
+.car-rental-box .details-div button {
+    margin-right: 5px;
+    font-size: 0.9em; /* Example of using em for font size */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    
+    .car-rental-box {
+        padding: 15px;
+    }
+    .car-rental-box .details-div h5 {
+        font-size: 1em; 
+    }
+    .car-rental-box .details-div p {
+        font-size: 0.9em;
+    }
+    .car-rental-box .details-div button {
+        font-size: 0.8em;
+        margin-top:.5rem
+    }
+        #total_service {
+            display: grid;
+            padding: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            /* Four columns with equal width */
+            
+            grid-row-gap: 3rem;
+            /* Adjust the gap between grid items */
+        }
+    
+                .car-rental {
+                    height: 5rem;
+                    width: 5rem;
+                    margin-top: 3rem;
+                }
+                                .car-rental img{
+                                    height: 5rem;
+                                    width: 5rem;
+                                }
+                                                                .car-rental h5 {
+                                                                    font-size: 14px;
+                                                                }
+}
+
+#container2{
+    width: 100%;
+    padding: 2rem;
+    /* display: flex; */
+}
+.first_container{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid rgb(145, 140, 140);
+    border-radius: 20px;
+}
+.inner_cont{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+}
+.card1-group{
+    display: flex;
+}
+.card1{
+    margin-left: 1rem;
+}
+
+/* login home page design */
+
+.myCard{
+    margin: 2rem auto;
+    height: 100%;
+    width: auto;
+}
+.profile_container{
+    height: 12rem;
+    width: 12rem;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 1rem auto;
+    border: 2px solid rgb(119, 118, 118);
+    background-size: 100% 100%;
+    
+}
+.myDiv{
+    position: absolute; 
+    border-radius: 5px;
+    bottom: .5rem;
+    left: 2rem;
+    width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+#img_selector{
+    /* position: absolute;
+    bottom: -.2rem;
+    left: 1.7rem; */
+    outline: none;
+    border: none;
+    /* border-radius: 100px; */
+    color:transparent;
+    width: 100%;
+    font-size: 10px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+}
+.profile_container img{
+    height: 12rem;
+    width: 12rem;
+}
+#selectedbtn{
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    /* position: absolute; */
+    font-size: 10px;
+    /* left: 7.5rem;
+    bottom: .8rem; */
+    border: none;
+    /* margin-left: 2px; */
+    
+}
+#selectedbtn h5{
+    font-size: 18px;
+}
+
+
+/* help page design */
+
+.help_container{
+    width: 100%;
+    margin: 4rem auto;
+    text-align: center;
+}
+.help_lower{
+    width: 100%;
+    padding: 1rem 2rem;
+}
+.my_icon{
+    font-size: 40px;
+    color: blue;
+}
+
+
+/* lead page design */
+
+#lead_page_container{
+    width: 100%;
+    border: 2px solid rgb(158, 154, 154);
+    border-bottom: none;
+    margin-left: 1rem;
+    padding: 2rem 2rem;
+}
+/* .lead_container{
+   
+} */
+.lead_container p{
+    line-height: 2px;
+}
+.above_space{
+    margin-top: 1rem;
+}
+.my_icon2{
+    font-size: 40px;
+    color: black;
+}
+.making_bold{
+    font-weight: 700;
+    font-size: 20px;
+}
